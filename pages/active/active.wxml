@@ -1,0 +1,90 @@
+<view class="body" wx:if="{{remind}}">
+  <view class='zong'>
+    <view class="spinner" >
+      <view class="spinner-container container1">
+        <view class="circle1"></view>
+        <view class="circle2"></view>
+        <view class="circle3"></view>
+        <view class="circle4"></view>
+      </view>
+      <view class="spinner-container container2">
+        <view class="circle1"></view>
+        <view class="circle2"></view>
+        <view class="circle3"></view>
+        <view class="circle4"></view>
+      </view>
+      <view class="spinner-container container3">
+        <view class="circle1"></view>
+        <view class="circle2"></view>
+        <view class="circle3"></view>
+        <view class="circle4"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <block wx:else >
+    <form bindsubmit="shenqing">
+      <view class="page">
+         <view class="shenqing">
+         <text class="shenqing_t">{{shenqing}}</text>
+         <view class='shenqing_c'>{{huiyuan}}</view>
+        </view>
+        
+        <view class="section">
+          <view class="text">
+            <text class='t_3'>您的姓名： </text>
+          </view>
+          <view class='inp'>
+            <input name="name" maxlength='10' style='font-size:13px;width:100%;' value='{{name}}' placeholder="姓名" type='text' />
+          </view>
+        </view>
+
+       
+        <view class='xt'></view>
+        <view class="section">
+          <view class="text">
+            <text class='t_3'>手机号码： </text>
+          </view>
+           <view class='inp'>
+            <input name="mobile" maxlength='11' style='font-size:13px;width:100%;' value='{{mobile}}' placeholder="手机号码"  type='number' />
+          </view>
+        </view>
+          <view class='xt'></view>
+        <view class="section">
+          <view class="text">
+            <text class='t_3'>登录密码：</text>
+          </view>
+           <view class='inp'>
+            <input name="user_password" maxlength='11' style='font-size:13px;width:100%;' value='{{	user_password}}' placeholder="密码"  type='password' />
+          </view>
+        </view>
+
+      
+
+        <view class='xt'></view>
+        <view class="section">
+          <view class="text">
+            <text class='t_3'>所在城市： </text>
+          </view>
+          <view class='inp'>
+            <!-- <input name="name" maxlength='10' style='font-size:13px;width:100%;' value='{{name}}' placeholder="姓名" type='text' /> -->
+<picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+    <text class='dpxzq'>{{region[0]}}</text><text class='dpxzq'>{{region[1]}}</text><text class='dpxzq'>{{region[2]}}</text>
+      <!-- {{region[0]}}，{{region[1]}}，{{region[2]}} -->
+    </view>
+  </picker>
+
+          </view>
+        </view>
+
+      </view>
+      <view>
+        <button  form-type='submit'  class="tx" style='border-radius:30px;'> 提交申请 </button>
+
+      </view>
+       
+    </form>
+     <button  form-type='submit' catchtap='todeng'   class="zc" style='border-radius:30px; margin-top:50rpx;'> 返回登录 </button>
+  </block>

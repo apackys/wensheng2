@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申请会员",
+  "usingComponents": {
+    "pop": "../logins/logins"
+  }
+}

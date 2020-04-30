@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "激活",
+  "usingComponents": {
+    "pop": "../logins/logins"
+  }
+}

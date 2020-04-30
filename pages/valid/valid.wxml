@@ -1,0 +1,11 @@
+<view class="container">
+<image class="imageurl" src="{{imageurl}}" ></image>
+<block wx:if="{{statusvalid == 2}}">
+<text>您已经提交申请，请耐心等待审核</text>
+</block>
+<block wx:else>
+<text class="xuzhi">文圣禽业商城为内部使用平台，需要账号注册并激活才能使用本商城</text>
+<button catchtap='jumpgo' class="tx">前往激活</button>  
+</block>
+</view>
+<pop id="pop"></pop>

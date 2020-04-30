@@ -1,0 +1,33 @@
+
+.page{
+  background-color:#fff;
+  margin-bottom:30px;
+}
+.container { 
+ height: 100vh; 
+ display: flex; 
+ flex-direction: column; 
+  justify-content: space-around; 
+  align-items:center;
+} 
+.imageurl{width:400rpx; height: 400rpx;}
+.tx{
+  background-color: #48474c;  
+  color: #fff; 
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  width: 345px;
+  border-radius:30px;
+}
+ 
+.xuzhi{
+  padding: 12px 0;
+  width: 80%;
+
+  font-size: 40rpx;
+
+}
+ 
+
+
