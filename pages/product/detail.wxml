@@ -44,17 +44,17 @@
         <view wx:else>
           <view wx:if="{{type1 == 1}}">
             ￥
-            <text style='font-size:40rpx;'>{{itemData.price11}}</text>
+            <text style='font-size:40rpx;'>{{itemData.price11}}元/只</text>
             <view wx:if="{{is_zhekou == 1 && zhekou !='all' && zhekou}}" style='width:100px;height:19px;float:right;'>会员折扣：{{zhekou}} 折</view>
           </view>
           <block wx:else>
             ￥
-            <text style='font-size:40rpx;'>{{qj_price}}</text>
+            <text style='font-size:40rpx;'>{{qj_price}}元/只</text>
             <view wx:if="{{is_zhekou == 1 && zhekou !='all' && zhekou}}" style='width:100px;height:19px;float:right;'>会员折扣： {{zhekou}} 折</view>
           </block>
 
           <view style='color:#666;font-size:25rpx;'>价格
-            <text style='text-decoration:line-through;'>￥{{qj_yprice}}</text>
+            <text style='text-decoration:line-through;'>￥{{qj_yprice}}元/只</text>
           </view>
         </view>
 
@@ -83,8 +83,9 @@
         <view style='clear:both;'></view>
       </view>
       <view class='kd_xl'>
-        <text class="c6 font_14" style='color:#ccc;margin-right:90px;'>快递：{{itemData.freight}}</text>
-        <text class="c6 font_14" style='color:#ccc'>销量：{{itemData.volume}}</text>
+        <text class="c6 font_14" wx:if="{{value}}" style='color:#ccc;margin-right:90px;'>规格：{{value}}</text>
+        <text class="c6 font_14" wx:else style='color:#ccc;margin-right:90px;'>选择 颜色分类</text>
+        <text class="c6 font_14" style='color:#ccc'>库存：{{itemData.num}}</text>
       </view>
     </view>
     <view style='clear:both;'></view>
@@ -92,14 +93,6 @@
 
     <form bindsubmit="add_fromid" report-submit='true'>
       <button class='gg_fl' style="font-size: 15px;height: 35px;padding: 0;width: 90%;margin: auto;background: #fff;line-height: 35px;" form-type="submit" type="default" data-type="" data-status="1">
-        <view style='float: left;font-size: 15px;line-height: 35px;color: #666;'>规格
-          <text wx:if="{{value}}" style='color:#666;padding-left:15px;'>{{value}}</text>
-          <text wx:else style='color:#666;padding-left:15px;'>选择 颜色分类</text>
-        </view>
-        <view style='float:right'>
-          <image src='../../images/x_right.png' style='float: right;line-height: 35px;'></image>
-        </view>
-        <view style='clear:both;'></view>
       </button>
     </form>
 
@@ -151,7 +144,8 @@
                 <!-- 减号 -->
                 <text class="{{minusStatuses[index]}}" data-alpha-beta="0" bindtap="changeNum">-</text>
                 <!-- 数值 -->
-                <view class="nownum">{{buynum}}</view>
+                <!-- <view class="nownum">{{buynum}}</view> -->
+                <input type="number" bindblur="bindManual" value="{{buynum}}" class='nownum'/>
                 <!-- 加号 -->
                 <text class="normal" data-alpha-beta="1" bindtap="changeNum">+</text>
               </view>

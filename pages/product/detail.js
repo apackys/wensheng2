@@ -309,7 +309,12 @@ Page({
       }
     }.bind(this), 200)
   },
+  bindManual: function (e) {
+    this.setData({
+      buynum: e.detail.value
+    });
 
+  },
   // 加减
   changeNum: function (e) {
     var that = this;
@@ -329,7 +334,8 @@ Page({
     } else {
       if (that.data.buynum < num) {
         this.setData({
-          buynum: this.data.buynum + 1
+          //增加parseInt  返回number
+            buynum: parseInt(this.data.buynum) + 1 
         })
       } else {
         wx.showToast({

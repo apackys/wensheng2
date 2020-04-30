@@ -26,7 +26,7 @@
 <!-- 加载页面结束 -->
 <block wx:else>
 <view class="page">
-      <view class='top-ql' wx:if="{{carts !=''}}">
+      <view class='top-ql' wx:if="{{carts !=''}}"> 
           <view  wx:if="{{!upstatus}}" bindtap="updata" class='top-ql-1' style='color:#333;'>编辑商品</view>
           <view  wx:else bindtap="ok" class='top-ql-1' style='color:#f60;'>完成</view>
           <view  wx:if="{{upstatus}}" bindtap="delall" class='top-ql-1 iconfont icon-icon-test' style='color:#f60;'>快速清理</view>

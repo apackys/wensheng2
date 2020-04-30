@@ -3,7 +3,6 @@ var util = require('../../utils/util.js')
 Page({
   data: {
     page: 1,
-    minusStatuses: ['disabled', 'disabled', 'normal', 'normal', 'disabled'],
     total: 0.0,
     nownum: [],
     shopList: [],

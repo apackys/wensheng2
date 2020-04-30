@@ -13,7 +13,7 @@ App({
     order: {},
     ceshiUrl: util.getUri(),
     titlee: '',
-    bgcolor: '',
+    bgcolor: '#000',
 
   },
   onLaunch: function(options) {
