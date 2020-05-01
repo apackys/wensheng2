@@ -39,7 +39,7 @@
            </view> 
       </navigator>
            <view class="carts-text">
-           <navigator style='width:100%;height:60rpx;overflow: hidden;'  url="../product/detail?productId={{item.id}}">
+           <navigator style='width:100%;height:60rpx;overflow: hidden;'  url="../product/detail?productId={{item.id}}&size={{item.size}}">
             <text class="carts-title">{{item.name}}</text>
            </navigator>
       <view class="stepper">      
@@ -51,7 +51,7 @@
             </view> 
           <view class="bill">
                 <text class="billtext">下单数量（只）:</text>
-             <input type="number" data-cartid="{{item.id}}" data-index="{{index}}" bindblur="bindManual"  value="{{nownum}}"  />
+             <input type="number" data-pid="{{item.id}}" data-index="{{index}}" bindblur="bindManual"  />
           </view>  
             
           </view>
