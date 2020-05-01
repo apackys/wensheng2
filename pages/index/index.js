@@ -23,7 +23,7 @@ Page({
     loading:false,
     remind: '加载中',
     showModal: false,
-    plug: [{ name: '快速下单', url: '../user/wallet', image:'/images/icons/cartopen.png'},
+    plug: [{ name: '快速下单', url: '../bill/bill', image:'/images/icons/cartopen.png'},
       { name: '订单列表', url: '../user/wallet', image: '/images/icons/4.png' },
       { name: '账户流水', url: '../user/wallet', image: '/images/icons/bill.png' }
      ],
@@ -622,18 +622,18 @@ Page({
   },
   getqx(event){
     let name = event.currentTarget.dataset.name
-
-    if (name === "签到" || name === "钱包"){
+    if (name === "快速下单" || name === "订单列表" || name === "账户流水"){
       if (app.userlogin(1)) {
         this.pop.clickPup(this)
         return
       }
     }
-
     wx.navigateTo({
       url: event.currentTarget.dataset.path,
     })
   },
+  
+
   onShareAppMessage: function (res) {
     var that = this;
     var id = that.data.productId;
@@ -656,5 +656,6 @@ Page({
       }
     }
   },
+
 
 });

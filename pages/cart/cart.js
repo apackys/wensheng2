@@ -322,6 +322,7 @@ Page({
         toastStr += ',';
       }
     }
+   
     if (toastStr == '') {
       wx.showToast({
         title: '请选择要结算的商品！',

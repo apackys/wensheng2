@@ -27,9 +27,7 @@
 <block wx:else>
 <view class="page">
       <view class='top-ql' wx:if="{{shopList !=''}}">
-          <view  wx:if="{{!upstatus}}" bindtap="updata" class='top-ql-1' style='color:#333;'>编辑商品</view>
-          <view  wx:else bindtap="ok" class='top-ql-1' style='color:#f60;'>完成</view>
-          <view  wx:if="{{upstatus}}" bindtap="delall" class='top-ql-1 iconfont icon-icon-test' style='color:#f60;'>重新填写</view>
+      <view  bindtap="delall" class='top-ql-1 iconfont icon-icon-test' style='color:#f60;'>重新填写</view>
       </view>
       <view class="container carts-list">
           <view wx:for="{{shopList}}"  wx:key="key" class="carts-item" data-title="{{item.name}}" id="{{item.id}}"> 
@@ -51,7 +49,7 @@
             </view> 
           <view class="bill">
                 <text class="billtext">下单数量（只）:</text>
-             <input type="number" data-pid="{{item.id}}" data-index="{{index}}" bindblur="bindManual"  />
+             <input type="number"  data-index="{{index}}"   value='{{item.Goods_num}}'  bindblur="bindManual" />
           </view>  
             
           </view>
@@ -64,7 +62,7 @@
       <view class="carts-footer" wx:if="{{shopList.length >= 1}}">
         <view bindtap="bindSelectAll" class='heji'>
               <text>总价：</text>
-              <text wx:if="{{!upstatus}}" class="reds">{{total}}</text>
+              <text  class="reds">{{total}}元</text>
         </view>
    
         <view wx:if="{{!upstatus}}" bindtap="bindCheckout"  class="button" style='background:#f60;' >立即下单 </view>        

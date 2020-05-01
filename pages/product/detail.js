@@ -592,7 +592,7 @@ Page({
     var ptype = e.currentTarget.dataset.type;
     // console.log(ptype, '--jnkmjkl')
       wx.request({
-        url: app.d.ceshiUrl + '&action=product&m=add_cart',
+        url: app.d.ceshiUrl + '&action=bill&m=add_cart',
         method: 'post',
         data: {
           uid: app.globalData.userInfo.openid,
