@@ -104,12 +104,11 @@
 
         
 
-          <view style='color:#808080;border-color:#808080;font-size:14px;width:60px;height:30px;line-height:30px;border-radius:30px;margin:12px 5px;float:right' class="font_12 red fl_r mr_5 " bindtap="removeOrder" wx:if="{{rstatus == 0}}" data-order-id="{{id}}">取消订单</view>
-         <view style='color:#808080;border-color:#808080;font-size:14px;width:60px;height:30px;line-height:30px;border-radius:30px;margin:12px 5px;float:right' class="font_12 red fl_r mr_5 " bindtap="t_index" data-order-id="{{id}}">返回首页</view>
+          <view style='color:#808080;border-color:#808080;font-size:14px;width:60px;height:30px;line-height:30px;border-radius:30px;margin:12px 10px;float:right' class="font_12 red fl_r mr_5 " bindtap="removeOrder" wx:if="{{rstatus == 0}}" data-order-id="{{id}}">取消订单</view>
 
 
    
-  <button class="pay_foot" style='color: #fff;background: #FF6347;border-radius: 30px;font-size: 13px;margin:12px 5px;width: 90px;height: 30px;line-height: 30px;float:left;' data-orderId="{{id}}" data-ordersn="{{sNo}}" open-type="contact" >联系客服</button> 
+  <button class="pay_foot" style='color: #fff;background: #FF6347;border-radius: 3px;magin: 0;font-size: 13px;padding: 0;width: 90px;height: 30px;line-height: 30px;float:right;' data-orderId="{{id}}" data-ordersn="{{sNo}}" open-type="contact" >联系客服</button> 
 
         </view> 
     </view>

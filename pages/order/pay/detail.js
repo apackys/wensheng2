@@ -3,7 +3,7 @@ var util = require('../../utils/util.js')
 //获取应用实例  
 var common = require("../../utils/common.js");
 // 定义一个总毫秒数，以一天为例  
- var total_micro_second = 7200 * 1000 * 24; //这是两天倒计时  
+// var total_micro_second = 7200 * 1000 * 24; //这是两天倒计时  
 function countdown(that) {
   // 渲染倒计时时钟
   var _this = that;

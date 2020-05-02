@@ -50,6 +50,7 @@ Page({
                   title: '操作成功！',
                   duration: 2500
                 });
+                that.data.cart_id=[];
                 that.loadProductData();
                 util.getUesrBgplus(that, app, false)
               } else {
@@ -116,6 +117,7 @@ Page({
       },
       success: function (res) {
         var shopList = res.data.pro;
+        that.data.cart_id =[];
         for (let i = 0 ;i<shopList.length;i++){
           that.data.cart_id.push(shopList[i].cart_id);
         }
@@ -159,7 +161,7 @@ Page({
             app.d.purchase = 1;
             var data = res.data;
             if (data.status == 1) { 
-                let cart_id = data.cart_id; 
+                let cart_id = String(data.cart_id); 
               if (that.data.cart_id[index] == ""){
                 that.data.cart_id[index] = cart_id;
               }
@@ -209,12 +211,7 @@ Page({
           if (data.status == 1) {
             that.loadProductData();
 
-          } else {
-            wx.showToast({
-              title: '操作失败！',
-              duration: 2000
-            });
-          }
+          } 
         },
       });
     } else {

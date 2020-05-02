@@ -27,7 +27,7 @@
   <!--普通结算开始  -->
   <form bindsubmit="createProductOrderByWX" report-submit="true">
     <view class="w100" style='padding-bottom:100px;'>
-    
+      
       <!-- 产品信息 -->
         <view class="p_all bg_white df item" style='height:70px;' wx:key="key" wx:for="{{productData}}">
           <view class="cp_photo" style='height:70px;display:flex;align-items:center;'>
@@ -60,7 +60,7 @@
             </view>
           </view>
         </view>
-       
+
         <!--普通结束 -->
         <!-- 结算 -->
         <view class='pay_foot'>
@@ -68,8 +68,8 @@
             <view class="zhifu mt10 ">合计：
               <span class="font_20 red" total="{{total}}">¥ {{total}}</span>
             </view>
-            <button wx:if="{{pay_xs}}" class="right btn_zf" type="primary" id="{{paytype}}" style='background:{{bgcolor}};border-radius:0;' disabled="{{btnDisabled}}" formType="submit">提交订单</button>
-            <button wx:else class="right btn_zf" type="primary" id="{{paytype}}" style='background:{{bgcolor}};border-radius:0;' disabled="{{btnDisabled}}" formType="submit">提交订单</button>
+            <button  class="right btn_zf" type="primary" id="{{paytype}}" style='background:{{bgcolor}};border-radius:0;' bindtap="up_order">提交订单</button>
+           
 
           </view>
         </view>
@@ -78,26 +78,3 @@
   <!--普通结算结束  -->
 </block>
 
-<!-- 弹窗 -->
-<view class="drawer_screen" bindtap="setModalStatus" data-index="0" data-status="0" wx:if="{{showModalStatus}}"></view>
-<view animation="{{animationData}}" class="drawer_attr_box" catchtouchmove="preventTouchMove" wx:if="{{showModalStatus}}">
-  <view wx:if="{{!list}}" class='myyhq'>暂无优惠券</view>
-  <view wx:else class='myyhq'> </view>
-  <scroll-view scroll-y="true" style="height: 93%;background: #eee;">
-    <view class='coupon_box' wx:key="key" wx:for="{{list}}">
-      <view class='coupon_left'>
-        <view style='margin-left:30px;font-size:35px;color:#ff6347;'>
-          ￥
-          <text style='font-size:50px;'>{{item.money}}</text>
-          <view class='gs'></view>
-        </view>
-        <view style='color:#666;font-size:14px;margin-left:20px;'></view>
-        <view class='right_z'></view>
-      </view>
-      <view class='coupon_right'>
-        <view style='width:50px;margin:32px auto;' data-index="0" bindtap='tapMainMenu' id="{{item.id}}">{{item.point}}</view>
-        <view class='right_y'></view>
-      </view>
-    </view>
-  </scroll-view>
-</view>

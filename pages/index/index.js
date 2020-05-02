@@ -24,7 +24,7 @@ Page({
     remind: '加载中',
     showModal: false,
     plug: [{ name: '快速下单', url: '../bill/bill', image:'/images/icons/cartopen.png'},
-      { name: '订单列表', url: '../user/wallet', image: '/images/icons/4.png' },
+      { name: '订单列表', url: '../order/order', image: '/images/icons/4.png' },
       { name: '账户流水', url: '../user/wallet', image: '/images/icons/bill.png' }
      ],
     timestamp:0,

@@ -556,6 +556,6 @@ button{
   font-size: 10px;
 }
 .ddlb_v-lift {
-  width: 130rpx;
+  width: 150rpx;
   text-align: end;
 }

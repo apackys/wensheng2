@@ -62,13 +62,13 @@
             <!-- </navigator> -->
 
             <view class='order_list'>
-              <!-- <navigator class='list' url="../order/order?currentTab=1&order_type1=payment&otype=pay"> -->
+              <!-- <navigator class='list' url="../order/order?currentTab=1&order_type1=payment&otype=pay"> --> 
               <view class="list" data-id="../order/order?currentTab=1&order_type1=payment&otype=pay" catchtap="jumpgo">
                 <text class='tishi' wx:if="{{dfk_num > 0}}">{{dfk_num}}</text>
                    <view class='dd_img'>
                     <image src='../../images/icons/5.png'></image>
                   </view>
-                <view style='margin-top:5px'>待付款</view>
+                <view style='margin-top:5px'>已下单</view>
               </view>
               <!-- </navigator> -->
 

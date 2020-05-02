@@ -49,31 +49,20 @@
           </view>
         </view>
         <view style='height:10px;widht:100%;background:#eee;'></view>
-        <!-- 信息 -->
-          <view >
-            <view style='height:10px;widht:100%;background:#eee;'></view>
-            <view class="pay_zf pd">
-              <text class="left">订单注意事项</text>
-            </view>
-            <view class="pay_zf pd" style='border-bottom:none;padding-right:3px;'>
-                   <text class="sp_tit">订单提交后，后台工作人员会尽快联系您,请耐心等待，客服联系电话18688888888</text>
-            </view>
-          </view>
-        </view>
        
         <!--普通结束 -->
         <!-- 结算 -->
         <view class='pay_foot'>
           <view class="pay_fk">
             <view class="zhifu mt10 ">合计：
-              <span class="font_20 red" total="{{total}}">¥ {{total}}</span>
+              <span class="font_20 red" total="{{total}}">¥ {{coupon_money}}</span>
             </view>
             <button wx:if="{{pay_xs}}" class="right btn_zf" type="primary" id="{{paytype}}" style='background:{{bgcolor}};border-radius:0;' disabled="{{btnDisabled}}" formType="submit">提交订单</button>
             <button wx:else class="right btn_zf" type="primary" id="{{paytype}}" style='background:{{bgcolor}};border-radius:0;' disabled="{{btnDisabled}}" formType="submit">提交订单</button>
 
           </view>
         </view>
-   
+    </view>
   </form>
   <!--普通结算结束  -->
 </block>
