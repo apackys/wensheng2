@@ -115,9 +115,14 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        var shoplist = res.data.pro;
+        var shopList = res.data.pro;
+        for (let i = 0 ;i<shopList.length;i++){
+          that.data.cart_id.push(shopList[i].cart_id);
+        }
+        console.log(that.data.cart_id)
+        // 计算总金额
         that.setData({
-          shopList: shoplist, 
+          shopList: shopList, 
           total: '￥0.00',
           remind: ''
         });
@@ -153,9 +158,13 @@ Page({
             //设置购物车刷新
             app.d.purchase = 1;
             var data = res.data;
-            if (data.status == 1) {
-              console.log(data.cart_id);
-              that.sum();
+            if (data.status == 1) { 
+                let cart_id = data.cart_id; 
+              if (that.data.cart_id[index] == ""){
+                that.data.cart_id[index] = cart_id;
+              }
+              console.log(that.data.cart_id)
+                that.sum();
             }
           },
           fail: function () {
@@ -228,7 +237,7 @@ Page({
     var that = this;
     var shopList = that.data.shopList;
     // 计算总金额
- 
+  
     var total = 0;
     for (var i = 0; i < shopList.length; i++) {
       if (shopList[i].Goods_num>0) {
@@ -248,7 +257,7 @@ Page({
     // 遍历取出已勾选的cid
     for (var i = 0; i < that.data.shopList.length; i++) {
       if (that.data.shopList[i].Goods_num> 0) {
-        toastStr += that.data.shopList[i].cart_id;
+        toastStr += that.data.cart_id[i];
         toastStr += ',';
       }
     }
