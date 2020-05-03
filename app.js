@@ -17,41 +17,18 @@ App({
 
   },
   onLaunch: function(options) {
-    //初始化加载，先判断用户登录状态
-    if (wx.getStorageSync('userInfo').openid){
-      var that = this;
-      wx.request({
-        url: that.d.ceshiUrl + '&action=app&m=statusvalid',
-        method: 'post',
-        data: {
-          openid: wx.getStorageSync('userInfo').openid,
-        },
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        success: function (res) {
-          
-          that.globalData.userInfo['statusvalid'] = res.data.status; // 签名
-          //修改缓存写入
-          wx.setStorageSync('userInfo', that.globalData.userInfo);
-
-        },
-        fail: function (e) {
-
-        },
-      });
-    }
-    console.log(wx.getStorageSync('userInfo').statusvalid);
-  
-/*  if (wx.getStorageSync('userInfo').statusvalid == 2  ) {
+    console.log(wx.getStorageSync('userInfo'))
+    if (wx.getStorageSync('userInfo').statusvalid == "2") {
       wx.switchTab({
         url: 'pages/index/index'
       })
     } else {
       wx.reLaunch({
-        url: 'pages/valid/valid'
+        url: 'pages/denglu/denglu'
       })
-    }   */
+    }  
+    //初始化加载，先判断用户登录状态
+
 
     //调用API从本地缓存中获取数据
     var logs = wx.getStorageSync('logs') || []
@@ -157,6 +134,7 @@ App({
         that.globalData.userInfo['coupon'] = res.data.coupon; // 优惠券状态
         that.globalData.userInfo['wallet'] = res.data.wallet; //  钱包状态
         that.globalData.userInfo['sign'] = res.data.sign; //  签到状态
+        that.globalData.userInfo['statusvalid'] = res.data.status; //  审核状态
         that.globalData.userInfo['sign_status'] = res.data.sign_status; // 是否签名
         that.globalData.userInfo['sign_image'] = res.data.sign_image; // 签到图片
         that.globalData.userInfo['user_id'] = res.data.user_id; // user_id

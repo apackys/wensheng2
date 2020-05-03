@@ -1,5 +1,4 @@
-<!--pages/cart/cart.wxml-->
-  <view class="body" wx:if="{{remind}}">
+ <view class="body" wx:if="{{remind}}">
     <view class='zong'>
           <view class="spinner" >
                     <view class="spinner-container container1">

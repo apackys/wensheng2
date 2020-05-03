@@ -1,0 +1,27 @@
+<view class="container">
+<image class="imageurl" src="{{imageurl}}" ></image>
+<text class="login">用户登录</text>
+<form bindsubmit="wxlogin" class="form">
+        <view class="section">
+          <view class="text">
+            <text class='t_3'>登录账号： </text>
+          </view>
+           <view class='inp'>
+            <input name="mobile" maxlength='11' style='font-size:13px;width:100%;' value='{{mobile}}' placeholder="手机号码"  type='number' />
+          </view>
+        </view>
+          <view class='xt'></view>
+        <view class="section">
+          <view class="text">
+            <text class='t_3'>登录密码：</text>
+          </view>
+           <view class='inp'>
+            <input name="user_password" style='font-size:13px;width:100%;' value='{{	user_password}}' placeholder="密码"  type='password' />
+          </view>
+        </view>
+         <view class='xt'></view>
+           <button  form-type='submit'  class="tx" > 用户登录 </button>
+          
+           </form>
+        <navigator url="../valid/valid"  class="zc">注册激活</navigator>
+</view>

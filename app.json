@@ -1,6 +1,6 @@
 {
   "pages": [
-  
+    "pages/denglu/denglu",
     "pages/index/index",
     "pages/valid/valid",
     "pages/active/active",

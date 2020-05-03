@@ -173,12 +173,13 @@
     <view class="swiper-tab">
       <view class="bre swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">图文详情</view>
       <view class="bre swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">产品参数</view>
-      <view wx:if="{{type1 == 1}}" class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
+       <view class="bre swiper-tab-list"></view>
+     <!--  <view wx:if="{{type1 == 1}}" class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
         <view data-current="2">抽奖规则</view>
       </view>
       <block wx:else>
         <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">商品评价</view>
-      </block>
+      </block> -->
     </view>
 
     <!-- 图文详情 -->

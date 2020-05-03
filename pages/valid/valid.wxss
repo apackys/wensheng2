@@ -17,7 +17,7 @@
   text-align: center;
   height: 45px;
   line-height: 45px;
-  width: 345px;
+  width: 500rpx;
   border-radius:30px;
 }
  

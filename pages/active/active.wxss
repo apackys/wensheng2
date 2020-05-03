@@ -51,7 +51,7 @@ radio .wx-checkbox-input.wx-checkbox-input-checked{
   text-align: center;
   height: 45px;
   line-height: 45px;
-  width: 345px;
+  width: 500rpx;
   border-radius:30px;
 }
 .Phone{
@@ -115,7 +115,7 @@ radio .wx-checkbox-input.wx-checkbox-input-checked{
   text-align: center;
   height: 45px;
   line-height: 45px;
-  width: 345px;
+  width: 500rpx;
   border-radius:30px;
 }
 .binding-header{ height:88rpx; background: #ffffff; }
