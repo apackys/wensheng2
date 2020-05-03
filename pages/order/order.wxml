@@ -31,15 +31,15 @@
         hover-class="click-once">{{item.value}}</view>
     </view>
     <!-- 下拉菜单 -->
-    <view class="swiper-tab-list phone_personal {{currentTab==0 ? 'on' : ''}} " hover-class="click-once-opaque" bindtap="clickPerson">
+    <view class="swiper-tab-list phone_personal {{currentTab==0 ? 'on' : ''}} " data-current="0" data-otype="pay" bindtap="swichNav">
       {{activeSortingName}}
-      <text class='icon iconfont {{sortingChioceIcon}}'></text>
+    
     </view>
     <!-- </view> -->
     <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" data-otype="payment" bindtap="swichNav">已下单</view>
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" data-otype="send" bindtap="swichNav">待发货</view>
-    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" data-otype="receipt" bindtap="swichNav">待收货</view>
-    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" data-otype="evaluate" bindtap="swichNav">待评价</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" data-otype="send" bindtap="swichNav">已完成</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" data-otype="receipt" bindtap="swichNav">已关闭</view>
+
   </view>
   <view class="c_t60"></view>
   <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange">
@@ -92,10 +92,9 @@
             <navigator wx:if="{{item.status == 1&& item.pid ==''}}" url="../order/detail?orderId={{item.id}}" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' class="font_12 red fl_r mr_5">订单详情</navigator>
             <navigator wx:if="{{item.status == 4}}" url="../order/detail?orderId={{item.id}}" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' class="font_12 red fl_r mr_5">订单详情</navigator>
             <!-- <navigator class="font_12 red fl_r mr_5" url="../logistics/logistics?orderId={{item.sNo}}" style='border:1px solid #8a8a8a;color:#8a8a8a;' wx:if="{{item.status == 2 || item.status == 3}}" data-order-id="{{item.id}}">查看物流</navigator> -->
-            <view class="font_12 red fl_r mr_5" wx:if="{{item.status == 5 && item.pid ==''}}" style='border:1px solid #8a8a8a;color:#8a8a8a;' data-order-id="{{item.id}}">订单完成</view>
-            <view class="font_12 red fl_r mr_5" bindtap="recOrder" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' wx:if="{{item.status == 2&& item.pid ==''}}" data-sNo="{{item.sNo}}">确认收货</view>
-            <view class="font_12 red fl_r mr_5" bindtap="recOrder" style='border:1px solid #8a8a8a;color:#8a8a8a;' wx:if="{{item.status == 2 &&item.pid > 0}}" data-sNo="{{item.sNo}}">确认收货</view>
-            <navigator class="font_12 red fl_r mr_5" url="../comment/comment?ordersn={{item.sNo}}" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' wx:if="{{item.status == 3}}" data-order-id="{{item.id}}">立即评价</navigator>
+            <view class="font_12 red fl_r mr_5" wx:if="{{item.status == 5 && item.pid ==''}}" style='border:1px solid #8a8a8a;color:#8a8a8a;' data-order-id="{{item.id}}">已完成</view>
+             <view class="font_12 red fl_r mr_5" wx:if="{{item.status == 6}}" style='border:1px solid #8a8a8a;color:#8a8a8a;' data-order-id="{{item.id}}">已关闭</view>
+            <view wx:if="{{item.status == 0 }}" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' class="font_12 red fl_r mr_5" data-order-id="{{item.id}}">已下单</view>
          
             <navigator wx:if="{{item.pid > 0 &&item.status > 0}}" url="../group_buy/cantuan?id={{item.ptcode}}&groupid={{item.pid}}&pro_id={{item.pro_id}}&man_num={{item.man_num}}" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' class="font_12 red fl_r mr_5">分享好友</navigator>
           </view>
@@ -143,7 +142,9 @@
               <span class="font_20 red" style="margin-left:5px;" wx:if="{{item.info == 0}}">¥ {{item.total}}</span>
             </view>
           </view>
-        
+          <view class="bottom">
+            <navigator wx:if="{{item.status == 0}}" url="../order/detail?orderId={{item.id}}" style='color:{{bgcolor}};border:1px solid {{bgcolor}};' class="font_12 red fl_r mr_5">订单详情</navigator>
+          </view>
         </view>
       </scroll-view>
     </swiper-item>

@@ -6,7 +6,7 @@ Page({
 		winWidth: 0,
 		winHeight: 0,
 		// tab切换  
-		currentTab: 1,
+		currentTab: 0,
 		isStatus: 'payment', //10待付款，20待发货，30待收货 40、50已完成
 		page: 0,
 		refundpage: 0,
@@ -143,7 +143,7 @@ Page({
 		var that = this;
 		var isStatus1 = that.options.order_type1
 		wx.request({
-      url: app.d.ceshiUrl + '&action=order&m=index',
+      url: app.d.ceshiUrl + '&action=bill&m=order',
 			method: 'post',
 			data: {
 				openid: app.globalData.userInfo.openid,
@@ -334,13 +334,7 @@ Page({
 				isStatus: 'receipt',
 			});
 			that.loadOrderList();
-		} else if(currentTab == 4) {
-			that.setData({
-				currentTab: parseInt(currentTab),
-				isStatus: 'evaluate',
-			});
-			that.loadOrderList();
-		}
+		} 
 		that.setData({
 			currentTab: currentTab
 		});

@@ -3,7 +3,7 @@
   
     "pages/index/index",
     "pages/valid/valid",
-     "pages/active/active",
+    "pages/active/active",
     "pages/search/search",
     "pages/user/user",
     "pages/new/new",

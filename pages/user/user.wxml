@@ -78,37 +78,29 @@
                   <view class='dd_img'>
                       <image src='../../images/icons/1.png'></image>
                   </view>
-                <view style='margin-top:5px'>待发货</view>
+                <view style='margin-top:5px'>已完成</view>
               </view>
               <!-- </navigator> -->
 
-              <!-- <navigator class='list' url="../order/order?currentTab=3&order_type1=receipt&otype=pay"> -->
-              <view class="list" data-id="../order/order?currentTab=3&order_type1=receipt&otype=pay" catchtap="jumpgo">
-                <text class='tishi'  wx:if="{{dsh_num > 0}}">{{dsh_num}}</text>
-                  <view class='dd_img'>
-                  <image src='../../images/icons/3.png'></image>
-                  </view>
-                <view style='margin-top:5px'>待收货</view>
-              </view>
-              <!-- </navigator> -->
+
 
               <!-- <navigator class='list' url="../order/order?currentTab=4&order_type1=evaluate&otype=pay"> -->
-              <view class="list" data-id="../order/order?currentTab=4&order_type1=evaluate&otype=pay" catchtap="jumpgo">
+              <view class="list" data-id="../order/order?currentTab=4&order_type1=receipt&otype=pay" catchtap="jumpgo">
                 <text class='tishi' wx:if="{{dpj_num > 0}}">{{dpj_num}}</text>
                   <view class='dd_img'>
                     <image src='../../images/icons/4.png'></image>
                   </view>
-                <view style='margin-top:5px'>待评价</view>
+                <view style='margin-top:5px'>已取消</view>
               </view>
               <!-- </navigator> -->
 
               <!-- <navigator class='list' url="../return_goods/index?currentTab=0&otype=whole"> -->
-              <view class="list" data-id="../return_goods/index?currentTab=0&otype=whole" catchtap="jumpgo">
+              <view class="list" data-id="../collection/collection" catchtap="jumpgo">
                  <text class='tishi' wx:if="{{th > 0}}">{{th}}</text> 
                 <view class='dd_img'>
-                    <image src='../../images/icons/2.png'></image>
+                    <image src='../../images/icons/new.png'></image>
                 </view>
-                <view style='margin-top:5px'>退货</view>
+                <view style='margin-top:5px'>收藏</view>
               </view>
               <!-- </navigator> -->
 
