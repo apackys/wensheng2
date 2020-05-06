@@ -17,7 +17,7 @@ App({
 
   },
   onLaunch: function(options) {
-    console.log(wx.getStorageSync('userInfo'))
+    console.log(wx.getStorageSync('userInfo').statusvalid)
     if (wx.getStorageSync('userInfo').statusvalid == "2") {
       wx.switchTab({
         url: 'pages/index/index'

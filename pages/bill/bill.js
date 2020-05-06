@@ -166,6 +166,7 @@ Page({
                 that.data.cart_id[index] = cart_id;
               }
               console.log(that.data.cart_id)
+              that.loadProductData();
                 that.sum();
             }
           },
@@ -233,6 +234,7 @@ Page({
   sum: function () {
     var that = this;
     var shopList = that.data.shopList;
+  
     // 计算总金额
   
     var total = 0;
@@ -249,6 +251,7 @@ Page({
   },
   bindCheckout: function () {
     var that = this;
+    that.loadProductData();
     // 初始化toastStr字符串
     var toastStr = '';
     // 遍历取出已勾选的cid
