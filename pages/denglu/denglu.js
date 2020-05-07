@@ -6,7 +6,6 @@ Page({
    */
   data: {
     imageurl: "../../images/logo.jpg",
-    statusvalid: '',
     mobile: '',
     user_password: '',    
 
@@ -16,7 +15,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    wx.getStorage({
+      key: 'mobile',
+      success: function (res) {
+        that.setData({ mobile: res.data })
+      },
+    })
+    wx.getStorage({
+      key: 'user_password',
+      success: function (res) {
+        that.setData({ user_password: res.data })
+      },
+    })
   },
 
   /**
@@ -66,7 +77,12 @@ Page({
   onReachBottom: function () {
 
   },
- 
+  toreg:function() {
+    wx.redirectTo({
+      url: '../valid/valid'
+    })
+  },
+
   wxlogin: function (res) {
     var that = this;
     var mobile = res.detail.value.mobile;
@@ -90,6 +106,14 @@ Page({
         wx.hideToast()
       }, 2000)
     } else {
+      wx.setStorage({
+        key: 'mobile',
+        data: res.detail.value.mobile,
+      })
+      wx.setStorage({
+        key: 'user_password',
+        data: res.detail.value.user_password,
+      })
       wx.request({
         url: app.d.ceshiUrl + '&action=user&m=denglu',
         method: 'post',

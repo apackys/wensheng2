@@ -1,11 +1,7 @@
 <view class="container">
 <image class="imageurl" src="{{imageurl}}" ></image>
-<block wx:if="{{statusvalid == 2}}">
-<text>您已经提交申请，请耐心等待审核</text>
-</block>
-<block wx:else>
-<text class="xuzhi">文圣禽业商城为内部使用平台，需要账号注册并激活才能使用本商城</text>
-<button catchtap='jumpgo' class="tx">前往激活</button>  
-</block>
+<text class="xuzhi">文圣禽业商城为内部使用平台，需要账号注册并激活才能使用本商城，如已激活请直接登录</text>
+<button catchtap='jumpgo' class="tx">前往注册激活</button>  
+ <navigator url='../denglu/denglu' class="zc">已激活直接登录</navigator>
 </view>
 <pop id="pop"></pop>

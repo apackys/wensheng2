@@ -24,10 +24,10 @@ App({
       })
     } else {
       wx.reLaunch({
-        url: 'pages/denglu/denglu'
+        url: 'pages/valid/valid'
       })
     }  
-    //初始化加载，先判断用户登录状态
+    //初始化加载，先判断用户登录状态 
 
 
     //调用API从本地缓存中获取数据

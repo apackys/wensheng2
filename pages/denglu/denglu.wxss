@@ -2,10 +2,10 @@
  height: 100vh; 
  display: flex; 
  flex-direction: column; 
-  justify-content: space-between; 
+  justify-content: space-around; 
   align-items:center;
 } 
-.imageurl{width:150rpx; height: 150rpx;}
+.imageurl{width:200rpx; height: 200rpx;}
 .form{width: 100%;}
 .section{
  padding: 30rpx 0;
@@ -48,8 +48,10 @@
   color: #fff; 
   text-align: center;
   height: 45px;
-  line-height: 45px;border-radius:30px; margin-top:50rpx;
-  width:500rpx;
+  line-height: 45px;
+   width: 500rpx;
+  border-radius:30px;
+  margin-top:50rpx;
 }
 .zc{
   background-color: #FF6347;  
@@ -57,7 +59,8 @@
   text-align: center;
   height: 45px;
   line-height: 45px;
-  width: 500rpx;margin-top:50rpx;
+   width: 500rpx;
   border-radius:30px;
+  margin-top:50rpx;
 }
  

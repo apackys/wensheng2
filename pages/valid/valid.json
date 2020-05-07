@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "激活",
+  "navigationBarTitleText": "用户须知",
   "usingComponents": {
     "pop": "../logins/logins"
   }

@@ -10,7 +10,7 @@
   justify-content: space-around; 
   align-items:center;
 } 
-.imageurl{width:400rpx; height: 400rpx;}
+.imageurl{width:300rpx; height: 300rpx;}
 .tx{
   background-color: #48474c;  
   color: #fff; 
@@ -28,6 +28,14 @@
   font-size: 40rpx;
 
 }
- 
+ .zc{
+  background-color: #FF6347;  
+  color: #fff; 
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  width: 500rpx;margin-top:50rpx;
+  border-radius:30px;
+}
 
 

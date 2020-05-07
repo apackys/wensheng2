@@ -21,7 +21,7 @@
         </view>
          <view class='xt'></view>
            <button  form-type='submit'  class="tx" > 用户登录 </button>
-          
            </form>
-        <navigator url="../valid/valid"  class="zc">注册激活</navigator>
+       <navigator url='../valid/valid' class="zc" >注册激活</navigator>
+        
 </view>
