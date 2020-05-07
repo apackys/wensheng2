@@ -5,11 +5,11 @@ Page({
     pop: null,
   },
   onLoad: function () {
-    if(app.globalData.userInfo.openid) {
+  /*   if(app.globalData.userInfo.openid) {
       wx.redirectTo({
         url: '../active/active'
       })
-    }
+    } */
 
   },
   //页面加载完成函数
@@ -33,7 +33,13 @@ Page({
   jumpgo: function (event) {
     if (app.userlogin(1)) {
       this.pop.clickPup(this);
+      setTimeout(function () {
+        wx.redirectTo({
+          url: '../active/active'
+        })
+      }, 9000)
       return 
+    
     }
     
   },

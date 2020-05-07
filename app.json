@@ -1,8 +1,8 @@
 {
   "pages": [
-        "pages/valid/valid",
-        
+
     "pages/index/index",
+    "pages/valid/valid",
     "pages/denglu/denglu",
     "pages/active/active",
     "pages/search/search",
